@@ -57,6 +57,51 @@ Create a new Lambda function using the Python 3.12 runtime.
 **Lambda Python code**
 
 
+```bash
+import json, boto3, uuid, urllib.parse, os
+from datetime import datetime
+
+s3 = boto3.client('s3')
+textract = boto3.client('textract')
+dynamodb = boto3.resource('dynamodb').Table(os.environ['TABLE_NAME'])
+ses = boto3.client('ses')
+
+def lambda_handler(event, context):
+    bucket = event['Records'][0]['s3']['bucket']['name']
+    key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key'])
+    
+    # Analyze expense with Textract
+    response = textract.analyze_expense(Document={'S3Object': {'Bucket': bucket, 'Name': key}})
+    
+    total = "0.00"
+    for doc in response['ExpenseDocuments']:
+        for field in doc['SummaryFields']:
+            if field['Type']['Text'] == 'TOTAL':
+                total = field['ValueDetection']['Text']
+
+    # Store in DynamoDB
+    dynamodb.put_item(Item={
+        'receipt_id': str(uuid.uuid4()),
+        'date': datetime.now().strftime('%Y-%m-%d'),
+        'file_name': key,
+        'total_amount': total
+    })
+
+    # Notify via SES
+    ses.send_email(
+        Source=os.environ['SENDER_EMAIL'],
+        Destination={'ToAddresses': [os.environ['RECIPIENT_EMAIL']]},
+        Message={
+            'Subject': {'Data': 'Receipt Processed Successfully'},
+            'Body': {'Text': {'Data': f'Processed {key}. Total: {total}'}}
+        }
+    )
+    return {'statusCode': 200, 'body': 'Success'}
+
+```
+
+
+
 
 <img width="1341" height="505" alt="image" src="https://github.com/user-attachments/assets/3b877453-7f4f-4306-a362-3e9e29f1e458" />
 
