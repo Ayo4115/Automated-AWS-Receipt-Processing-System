@@ -103,12 +103,11 @@ def lambda_handler(event, context):
         }
     )
     return {'statusCode': 200, 'body': 'Success'}
+```
+
+---
 
           
-
-
-
-
 <img width="1341" height="505" alt="image" src="https://github.com/user-attachments/assets/3b877453-7f4f-4306-a362-3e9e29f1e458" />
 
 ---
@@ -204,3 +203,16 @@ Metrics: We track Lambda Throttles and Errors. If the system scales suddenly, Cl
 Alarms: A Billing Alarm is set to notify the administrator if the monthly spend exceeds a defined threshold (e.g., $5), preventing unexpected costs from high-volume uploads.
 
 Traces (X-Ray): (Optional add-on) Used to visualize the latency between S3, Textract, and DynamoDB to identify bottlenecks in the processing chain.
+
+
+## 🏁 Conclusion
+
+This project successfully demonstrates the power of **Event-Driven Architecture (EDA)** in solving real-world business challenges. By leveraging AWS serverless technologies, I built a system that is not only highly scalable and durable but also extremely cost-effective, with a near-zero cost floor for low-volume usage.
+
+### Key Takeaways:
+
+- **Serverless First:** Learned how to architect solutions without managing underlying infrastructure, reducing operational complexity.
+- **AI Integration:** Gained hands-on experience integrating Managed AI services (Amazon Textract) to turn unstructured image data into actionable structured data.
+- **Cloud Security:** Applied industry-standard security practices using IAM roles and the Principle of Least Privilege.
+
+This pipeline serves as a foundation for more complex document processing workflows, such as automated invoice approval systems or real-time financial auditing tools.
