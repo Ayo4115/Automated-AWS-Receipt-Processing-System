@@ -98,13 +98,13 @@ def lambda_handler(event, context):
     )
     return {'statusCode': 200, 'body': 'Success'}
 
-```
+          
 
 
 
 
 <img width="1341" height="505" alt="image" src="https://github.com/user-attachments/assets/3b877453-7f4f-4306-a362-3e9e29f1e458" />
-
+```
 
 📌 IAM Role: Attach a policy granting permissions for S3:GetObject, Textract:AnalyzeDocument, DynamoDB:PutItem, and SES:SendEmail.
 
@@ -129,11 +129,30 @@ RECEIVER_EMAIL: Your verified SES recipient email.
 <img width="1371" height="480" alt="image" src="https://github.com/user-attachments/assets/607590a9-0a33-40af-a368-99635a1acb6a" />
 
 
-📌 
+## 📌 Event Trigger
+
+1. In the S3 Console, navigate to Properties > Event Notifications.
+2. Create a notification for All object create events.
+3. Set the Destination to your Lambda function.
+
+<img width="1364" height="418" alt="image" src="https://github.com/user-attachments/assets/291b71b3-b43e-4228-8e8e-210b6e69c1f8" />
+
+<img width="1336" height="525" alt="image" src="https://github.com/user-attachments/assets/72aaef98-f7a7-4bc6-9018-7cc96486a2a8" />
+
+<img width="1347" height="531" alt="image" src="https://github.com/user-attachments/assets/31e8012e-b4ad-43d4-8c10-68943157a409" />
 
 
+## 📌 Event Trigger Confirmation in DynamoDB
+
+1. In the S3 Console, navigate to DynamoDB > Tables.
+2. Click on Receipts. > Explore table items
+
+<img width="1374" height="581" alt="image" src="https://github.com/user-attachments/assets/96e41b22-60c8-4ec6-b209-a58544333165" />
 
 
+### Problem Statement
+
+"Traditional manual expense reporting is time-consuming, prone to human error, and difficult to scale. Businesses require an automated, cost-effective solution to ingest physical receipts, extract key financial data with high accuracy, and provide instant confirmation to users. This project addresses the need for a Serverless Intelligent Document Processing (IDP) pipeline that eliminates manual data entry and reduces the operational overhead of managing physical records."
 
 
 
