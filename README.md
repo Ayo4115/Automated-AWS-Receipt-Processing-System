@@ -1,10 +1,56 @@
 # Automated-AWS-Receipt-Processing-System
 An event-driven serverless application that automatically extracts data from uploaded receipt images using OCR, stores the results in a NoSQL database, and sends an email notification to the user.
 
-## 📌 Overview
-This project demonstrates a robust cloud-native architecture using AWS Lambda, Amazon Textract, and Amazon S3. It is designed to handle 
 
-document processing workflows without the need for managing servers, offering high scalability and cost-efficiency.
+## 📌 Problem
+
+Manual receipt processing is slow, error-prone, and not scalable for businesses handling large volumes of transactions.
+
+## 💡 Solution
+
+Designed and implemented a serverless, event-driven receipt processing system on AWS that automatically extracts, stores, and notifies users of receipt data.
+
+## 🏗️ Architecture Overview
+
+Workflow:
+
+User Upload → S3 → Lambda → Textract → Database → Notification
+
+Amazon S3 – Stores uploaded receipts (PDF/JPG)
+AWS Lambda – Processes events and orchestrates workflow
+Amazon Textract – Extracts structured receipt data
+Database (DynamoDB/RDS) – Stores processed data
+SNS/SES – Sends notifications to users
+
+## ⚙️ Key Features
+
+. Event-driven processing using S3 triggers
+. Automated data extraction using AI (Textract)
+. Scalable serverless architecture
+. Real-time notification system
+
+
+## 🔐 Security
+
+. IAM roles with least privilege access
+. No direct public access to backend resources
+. Secure service-to-service communication
+
+
+## 💰 Cost Optimization
+
+. Fully serverless (pay-per-use)
+. No idle infrastructure costs
+
+#3 📊 Monitoring & Debugging
+
+. AWS CloudWatch logs for Lambda execution
+. Error tracking and debugging via logs
+
+
+
+
+
 
 ## 🏗️ Architecture
 
