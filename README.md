@@ -1,5 +1,5 @@
 # Automated-AWS-Receipt-Processing-System
-An event-driven serverless application that automatically extracts data from uploaded receipt images using OCR, stores the results in a NoSQL database, and sends an email notification to the user.
+Built a serverless receipt processing system on AWS that automatically extracts key data (vendor, date, amount) from uploaded receipts using AI-powered text recognition, stores structured results in a database, and sends real-time email notifications—eliminating manual data entry and enabling scalable, cost-efficient processing.
 
 
 ## 📌 Problem
@@ -64,8 +64,8 @@ SNS/SES – Sends notifications to users
 
 5. Notification: Amazon SES sends an automated email confirmation to the user.
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/0cf425a3-d50c-45fc-a7c0-ccd8aeef418b" />
 
-<img width="880" height="633" alt="image" src="https://github.com/user-attachments/assets/c3facd79-fff2-44ff-8a4f-d4a809bd63ad" />
 
 
 
