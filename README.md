@@ -18,6 +18,16 @@ document processing workflows without the need for managing servers, offering hi
 
 5. Notification: Amazon SES sends an automated email confirmation to the user.
 
+
+<img width="880" height="633" alt="image" src="https://github.com/user-attachments/assets/c3facd79-fff2-44ff-8a4f-d4a809bd63ad" />
+
+
+
+---
+
+
+
+
 ## 🛠️ Tech Stack
 
 1. Cloud Provider: Amazon Web Services (AWS)
