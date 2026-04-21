@@ -42,7 +42,7 @@ SNS/SES – Sends notifications to users
 . Fully serverless (pay-per-use)
 . No idle infrastructure costs
 
-#3 📊 Monitoring & Debugging
+## 📊 Monitoring & Debugging
 
 . AWS CloudWatch logs for Lambda execution
 . Error tracking and debugging via logs
@@ -64,11 +64,18 @@ SNS/SES – Sends notifications to users
 
 5. Notification: Amazon SES sends an automated email confirmation to the user.
 
+
+   ## 🏗️ Architecture Diagram
+   
+
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/0cf425a3-d50c-45fc-a7c0-ccd8aeef418b" />
 
 
 
+                                               
 
+
+                                               
 ---
 
 
